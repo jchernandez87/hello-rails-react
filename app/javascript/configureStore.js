@@ -1,14 +1,21 @@
 import { createStore } from 'redux'
 
 const initialState = {
-  things: []
+  things: [
+    {
+      name: "test"
+    },
+    {
+      name: "test 2"
+    }
+  ]
 };
 
 function rootReducer(state, action) {
   console.log(action.type);
   switch (action.type) {
     default:
-      return store
+      return state
   }
 }
 

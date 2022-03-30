@@ -1,7 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
 import HelloRailsReact from './HelloRailsReact'
 
@@ -13,10 +13,9 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/" render={() => ("Home!")} />
-            <Route path="/hello" render={() => <HelloRailsReact greeting="friend"/>} />
-          </Switch>
+          <Routes>
+            <Route path="/hello" element={<HelloRailsReact greeting="friend" />} />
+          </Routes>
         </BrowserRouter>
       </Provider>
     );
